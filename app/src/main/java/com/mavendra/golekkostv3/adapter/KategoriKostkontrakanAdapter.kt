@@ -23,6 +23,7 @@ class KategoriKostkontrakanAdapter(var data: ArrayList<Kostkontrakan>, var liste
     class Holder(view: View):RecyclerView.ViewHolder(view){
         val tvName = view.findViewById<TextView>(R.id.tvNamaKategoriKostkontrakan)
         val tvHarga = view.findViewById<TextView>(R.id.tvHargaKategoriKostkontrakan)
+        val tvRasio = view.findViewById<TextView>(R.id.tvRasioKategoriKostkontrakan)
         val tvLokasi = view.findViewById<TextView>(R.id.tvLokasiKategoriKostkontrakan)
         val tvDeskripsi = view.findViewById<TextView>(R.id.tvDeskripsiKategoriKostkontrakan)
         val tvMayoritas = view.findViewById<TextView>(R.id.tvMayoritasKategoriKostkontrakan)
@@ -46,6 +47,7 @@ class KategoriKostkontrakanAdapter(var data: ArrayList<Kostkontrakan>, var liste
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.tvName.text = data[position].name
         holder.tvHarga.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
+        holder.tvRasio.text = data[position].rasiobayar
         holder.tvLokasi.text = data[position].lokasi
         holder.tvDeskripsi.text = data[position].deskripsi
         holder.tvMayoritas.text = data[position].mayoritas
